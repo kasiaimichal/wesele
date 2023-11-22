@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weselna zagadka!</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpeg" href="icon.jpg">
+</head>
+<body>
+    <div id="screens-container">
+        <!-- Main Screen -->
+        <div class="container py-5 screen" id="screen-main">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h1 class="mb-4">Witajacie<br /> Kasiu i Michale</h1>
+                    <p>Gratulujemy rozszyfrowania pierwszej zagadki!</p>
+
+                    <img src="padlock.png" style="max-width: 60%"/>
+
+                    <p>Przygotowaliśmy dla Was <strong>cztery</strong> dodatkowe zadania. Po zakońćzeniu każdego z nich
+                        kolejna cyfra potrzebna do odblokowania kłódki pojawi się na dole ekranu!</p>
+                    <p>Jeśli jesteście gotowi, kliknijcie w przycisk poniżej. </p>
+                    <button id="start-btn" class="btn btn-primary btn-lg">Rozpocznij</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Puzzle Screen 1 -->
+        <div class="container py-5 screen" id="screen-1">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h1 class="mb-4">Pytanie <strong>#1</strong></h1>
+                    <p>Czy poznajecie to miejsce? Miejse gdzie wszystko się zaczęło... ♫ ♫ ♫ ♫</p>
+                    <img src="adhd.png" style="max-width: 60%;filter: blur(8px);"/>
+
+                    <br /><br />
+                    <div class="alert-placeholder"></div>
+                    <input type="text" id="answer-1" class="form-control" /><br />
+                    <button  class="btn btn-primary btn-lg" onclick="checkAnswer(1, 'adhd', 'Na pewno znacie to logo :)')">Sprawdź</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Puzzle Screen 2 -->
+        <div class="container py-5 screen" id="screen-2">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h1 class="mb-4">Zadanie <strong>#2</strong></h1>
+                    
+                    <p>Spraw, aby wszystko znowu było na swoim miejscu :)</p>
+                    
+                    <div id="tiles">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Puzzle Screen 3 -->
+        <div class="container py-5 screen" id="screen-3">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h1 class="mb-4">Zadanie <strong>#3</strong></h1>
+                    
+                    <p>Co znajduje się w prawym dolnym rogu.. 🤣</p>
+                    <br />
+                    <center>
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>❓</td>
+                            </tr>
+                        </table>
+                    </center>
+
+                    <div class="alert-placeholder"></div>
+                    <input type="text" id="answer-3" class="form-control" /><br />
+                    <button  class="btn btn-primary btn-lg" onclick="checkAnswer(3, 'R', 'Michał... no brum, brum!')">Sprawdź</button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Puzzle Screen 4 -->
+        <div class="container py-5 screen" id="screen-4">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h1 class="mb-4">Zadanie <strong>#4</strong></h1>
+                    
+                    <p>Uff.. jesteście coraz bliżej.. tylko jedna cyfra (nie oszukujcie!) 😊?</p>
+                    <p>W tym zadaniu będziecie musieli w ciągu <strong>69 sekund</strong> znaleźć wszystkie pary!</p>
+                    <p>Jeśli nie zdążycie.. musicie zacząć od nowa.</p>
+
+                    <h4 id="time-h4">Pozostało Ci <span id="timer">69</span> sekund</h4>
+
+                    <div class="game" id="game-id" style="display: none">
+                        <div class="game-board">
+                        </div>
+                    </div>
+
+                    <button id="start-memo" class="btn btn-primary btn-lg">Rozpocznij grę</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Puzzle Screen 4 -->
+        <div class="container py-5 screen" id="screen-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h1 class="mb-4">Gratulacje!</h1>
+                    <h3>Wszystkiego dobrego na nowej drodze życia!</h3>
+                    <h4>Łukasz, Marta, Olek i Kuba</h4>
+                    <img src="lock.png" style="max-width: 100%; margin-top: 30px; border: 1px solid #bbb"/>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-bar">
+            <div class="code-display" id="code-display"><h5>Kod: <span id="code">_ _ _ _</span></h5></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="puzzle.js"></script>
+    <script src="memo.js"></script>
+</body>
+</html>
